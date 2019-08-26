@@ -3,7 +3,7 @@ class Card
   
   def initialize(value, suit)
     @value = value
-    @values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Queen", "King", "Ace", "Jack"]
+    @values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Ace", "Jack", "King", "Queen"]
     @suits = [:hearts, :spades, :clubs, :diamonds]
     
     unless @suits.include?(suit) && @values.include?(value)

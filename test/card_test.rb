@@ -50,23 +50,31 @@ describe Card do
       # The current implementation of to_s does not address this feature
       # Write the test, see it fail, then modify to_s to make it pass!
       # (Consider writing a helper method!)
-      test_card = Card.new("Queen", :hearts)
-      string_card = test_card.to_s 
-      expect(string_card).must_equal "Queen of hearts"
+      
+      ["Ace", "Jack", "King", "Queen"].each do |value|
+        [:hearts, :spades, :clubs, :diamonds].each do |suit|
+          # arrange
+          card = Card.new(value, suit)
+          # act
+          string_version = card.to_s
+          # assert
+          expect(string_version).must_equal "#{value} of #{suit}"
+        end
+      end
     end
-  end
-  
-  describe "Reader methods" do
     
-    it "Can retrieve the value of the card using a `.value`." do
-      test_card = Card.new(2, :diamonds)
-      expect(test_card.value).must_equal 2
+    describe "Reader methods" do
+      
+      it "Can retrieve the value of the card using a `.value`." do
+        test_card = Card.new(2, :diamonds)
+        expect(test_card.value).must_equal 2
+      end
+      
+      it "Can retrieve the value of the card using a `.suit`." do
+        test_card = Card.new(2, :diamonds)
+        expect(test_card.suit).must_equal :diamonds
+      end
     end
     
-    it "Can retrieve the value of the card using a `.suit`." do
-      test_card = Card.new(2, :diamonds)
-      expect(test_card.suit).must_equal :diamonds
-    end
   end
-  
 end
