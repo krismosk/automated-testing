@@ -1,18 +1,14 @@
-
-# card.rb
-
 class Card
   attr_reader :value, :suit
   
   def initialize(value, suit)
     @value = value
+    @values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Queen", "King", "Ace", "Jack"]
     @suits = [:hearts, :spades, :clubs, :diamonds]
-    @values = (1..13).to_a
     
-    if @suits.include?(suit) == false || value < 1 || value > 13
-      raise ArgumentError.new("Not a valid suit.")
+    unless @suits.include?(suit) && @values.include?(value)
+      raise ArgumentError.new("Not a valid card.")
     end
-    
     @suit = suit
     
     
@@ -22,11 +18,8 @@ class Card
   def to_s
     return "#{value} of #{suit.to_s}"
   end
+  
+  
+  
+  
 end
-
-# result = Card.new(12, :clubs)
-# p result
-
-
-
-# suits = [:hearts, :spades, :clubs, :diamonds]
