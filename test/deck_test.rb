@@ -20,8 +20,8 @@ describe Deck do
   end
   
   describe "You can count the number of card in a Deck" do
-    it ".count returns a count of cards" do
-      # Expect that .count can be used on Deck
+    # Expect that .count can be used on Deck
+    it ".count_cards returns a count of cards" do
       # Arrange 
       test_deck_size = Deck.new
       
@@ -30,11 +30,22 @@ describe Deck do
     end
   end 
   
+  describe "You can shuffle the Deck of cards" do 
+    # Expect that .shuffle can be used on Deck
+    it ".shuffle_cards returns a shuffled array of cards" do 
+      # Arrange
+      test_deck_shuffle = Deck.new
+      
+      # Act / Assert
+      expect(test_deck_shuffle.shuffle_cards).wont_be_same_as test_deck_shuffle
+    end
+  end 
+  
   
   
   
   # Expect that .draw can be used on Deck
-  # Expect that .shuffle can be used on Deck
+  
   
   # Expect that reader methods works for Deck instance variables
   

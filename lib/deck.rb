@@ -15,27 +15,22 @@ class Deck
     
   end
   
-  def count
+  def count_cards
     return cards.length 
   end 
   
+  def draw_card
+    # removes a Card from the Deck and
+    # returns the removed Card 
+  end
   
-  
-  
-  
-  
-  # def draw
-  #   # removes a Card from the Deck and
-  #   # returns the removed Card 
-  # end
-  
-  # def shuffle
-  #   # shuffles the deck
-  #   # don't test for randomness, just make sure method can be called
-  # end
+  def shuffle_cards
+    return cards.shuffle!
+  end
   
   
 end
 
 my_deck = Deck.new
-p my_deck.count
+p my_deck.cards
+p my_deck.shuffle_cards
