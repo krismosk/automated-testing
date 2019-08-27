@@ -2,7 +2,6 @@ require_relative 'test_helper'
 require_relative '../lib/card'
 
 
-
 describe Card do
   describe "You can create a Card instance" do
     
