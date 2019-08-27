@@ -1,14 +1,8 @@
 require_relative 'test_helper'
 
 describe Deck do
-  # Write tests for the Deck class.
-  # What should you test?
-  # 1.  Expected Behavior
-  # 2.  Edge cases
-  
   describe "You can create a Deck instance" do
-    # Expect that Deck class can be instantiated with 52 cards 
-    it "Can be created with 52 cards in deck" do 
+    it "Deck can't contain more than 52 cards" do 
       # Arrange
       test_deck = Deck.new
       # Act / Assert
@@ -17,7 +11,6 @@ describe Deck do
   end
   
   describe "You can count the number of card in a Deck" do
-    # Expect that .count can be used on Deck
     it ".count_cards returns a count of cards" do
       # Arrange 
       test_deck_size = Deck.new
@@ -27,7 +20,6 @@ describe Deck do
   end 
   
   describe "You can shuffle the Deck of cards" do 
-    # Expect that .shuffle can be used on Deck
     it ".shuffle_cards returns a shuffled array of cards" do 
       # Arrange
       unshuffled_deck = Deck.new
@@ -39,7 +31,6 @@ describe Deck do
   end 
   
   describe "You can draw a Card from the Deck" do
-    # Expect that .draw can be used on Deck
     it ".draw_card returns one instance of Card from Deck" do
       # Arrange
       my_deck = Deck.new
@@ -50,13 +41,23 @@ describe Deck do
     end 
   end 
   
+  describe "Reader Method" do
+    it "Can retrieve the list of Cards using .cards" do
+      our_deck = Deck.new
+      expect(our_deck.cards).must_be_kind_of Array
+    end 
+    
+    it "List of Cards contains Card objects" do 
+      our_deck = Deck.new
+      our_cards = our_deck.cards 
+      our_cards.each do |card|
+        expect(card).must_be_kind_of Card
+      end 
+    end
+  end
   
-  
-  
-  
-  # Expect that reader methods works for Deck instance variables
-  
-  # Edge: Total cards in a deck can't exceed 52
   # Edge: Each suit has one of each corresponding value and won't exceed allotted quantities
   # # i.e. only one instance - 2 of hearts; only one instance of Queen of hearts
+  
+  
 end
