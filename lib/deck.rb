@@ -32,15 +32,10 @@ class Deck
   
 end
 
-my_deck = Deck.new
+# my_deck = Deck.new
 
-p my_deck.cards.first #unshuffled first card
+# p my_deck.cards.first #unshuffled first card
 
-drawn_card = my_deck.cards.shift
-p drawn_card
-p my_deck.cards.include?(drawn_card)
-
-
-
-# drawn_card = my_deck.draw_card 
+# drawn_card = my_deck.cards.shift
 # p drawn_card
+# p my_deck.cards.include?(drawn_card)
