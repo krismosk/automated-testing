@@ -19,18 +19,28 @@ class Deck
     return cards.length 
   end 
   
-  def draw_card
-    # removes a Card from the Deck and
-    # returns the removed Card 
-  end
-  
   def shuffle_cards
     return cards.shuffle!
   end
   
+  def draw_card
+    
+    removed_card = cards.shift #removes the first Card from the Deck
+    # return "The #{removed_card.to_s} card was removed from the deck."
+    return removed_card
+  end
   
 end
 
 my_deck = Deck.new
-p my_deck.cards
-p my_deck.shuffle_cards
+
+p my_deck.cards.first #unshuffled first card
+
+drawn_card = my_deck.cards.shift
+p drawn_card
+p my_deck.cards.include?(drawn_card)
+
+
+
+# drawn_card = my_deck.draw_card 
+# p drawn_card

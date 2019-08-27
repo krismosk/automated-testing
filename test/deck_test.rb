@@ -11,12 +11,9 @@ describe Deck do
     it "Can be created with 52 cards in deck" do 
       # Arrange
       test_deck = Deck.new
-      
       # Act / Assert
       expect(test_deck.cards.length).must_equal 52
     end
-    
-    
   end
   
   describe "You can count the number of card in a Deck" do
@@ -24,7 +21,6 @@ describe Deck do
     it ".count_cards returns a count of cards" do
       # Arrange 
       test_deck_size = Deck.new
-      
       # Act / Assert
       expect(test_deck_size.cards.length).must_equal 52
     end
@@ -37,15 +33,25 @@ describe Deck do
       unshuffled_deck = Deck.new
       # Act 
       shuffled_deck = unshuffled_deck.shuffle_cards
-      # Act / Assert
+      # Assert
       expect(shuffled_deck).wont_be_same_as unshuffled_deck
     end
   end 
   
+  describe "You can draw a Card from the Deck" do
+    # Expect that .draw can be used on Deck
+    it ".draw_card returns one instance of Card from Deck" do
+      # Arrange
+      my_deck = Deck.new
+      # Act
+      drawn_card = my_deck.cards.shift
+      # Assert
+      expect(my_deck.cards).wont_include drawn_card
+    end 
+  end 
   
   
   
-  # Expect that .draw can be used on Deck
   
   
   # Expect that reader methods works for Deck instance variables
