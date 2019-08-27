@@ -34,10 +34,11 @@ describe Deck do
     # Expect that .shuffle can be used on Deck
     it ".shuffle_cards returns a shuffled array of cards" do 
       # Arrange
-      test_deck_shuffle = Deck.new
-      
+      unshuffled_deck = Deck.new
+      # Act 
+      shuffled_deck = unshuffled_deck.shuffle_cards
       # Act / Assert
-      expect(test_deck_shuffle.shuffle_cards).wont_be_same_as test_deck_shuffle
+      expect(shuffled_deck).wont_be_same_as unshuffled_deck
     end
   end 
   
